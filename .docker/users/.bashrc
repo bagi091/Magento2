@@ -7,6 +7,5 @@ alias magento='php -d memory_limit=-1 -f bin/magento'
 alias node='nodejs'
 
 # NVM
-
-export NVM_DIR="/var/www/.nvm"
+export NVM_DIR="${XDG_CONFIG_HOME/:-$HOME/.}nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
