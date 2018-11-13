@@ -22,5 +22,8 @@ exec:
 		docker-compose exec --user $(call args) apache bash; \
 	fi;
 
+build:
+	@docker-compose build;
+
 xdebug:
 	@docker-compose exec --user root apache xdebug
