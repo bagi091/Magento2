@@ -11,6 +11,7 @@ services:
     volumes:
       - ./src:/var/www/html
       - ./bagi091:/var/www/bagi091
+      - ./pwa:/var/www/pwa
       - ~/.composer:/var/www/.composer
       - ~/.npm:/var/www/.npm
       # - ~/.nvm:/var/www/.nvm
