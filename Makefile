@@ -17,9 +17,9 @@ down:
 
 exec:
 	@if [ -z "$(call args)" ]; then \
-		docker-compose exec --user www-data apache bash; \
+		docker-compose exec --user www-data nginx bash; \
 	else \
-		docker-compose exec --user $(call args) apache bash; \
+		docker-compose exec --user $(call args) nginx bash; \
 	fi;
 
 build:
