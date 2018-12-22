@@ -17,7 +17,7 @@ down:
 
 exec:
 	@if [ -z "$(call args)" ]; then \
-		docker-compose exec --user www-data php bash; \
+		docker-compose exec php bash; \
 	else \
 		docker-compose exec --user $(call args) php bash; \
 	fi;
