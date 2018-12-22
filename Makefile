@@ -17,13 +17,13 @@ down:
 
 exec:
 	@if [ -z "$(call args)" ]; then \
-		docker-compose exec --user www-data nginx bash; \
+		docker-compose exec --user www-data php bash; \
 	else \
-		docker-compose exec --user $(call args) nginx bash; \
+		docker-compose exec --user $(call args) php bash; \
 	fi;
 
 build:
 	@docker-compose build;
 
-xdebug:
-	@docker-compose exec --user root apache xdebug
+#xdebug:
+#	@docker-compose exec --user root apache xdebug
