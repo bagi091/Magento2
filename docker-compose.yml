@@ -9,7 +9,6 @@ services:
     volumes:
       - ./.docker/nginx/etc_mount:/etc/nginx
       - ./src:/var/www/html
-      - ./bagi091:/var/www/bagi091
       - ./pwa:/var/www/pwa
     restart: always
     links:
@@ -24,7 +23,6 @@ services:
       context: ./.docker/php
     volumes:
       - ./src:/var/www/html
-      - ./bagi091:/var/www/bagi091
       - ./pwa:/var/www/pwa
 
   db:
