@@ -21,8 +21,13 @@ services:
   php:
     build:
       context: ./.docker/php
+    environment:
+      - COMPOSER_HOME=${COMPOSER_HOME}
+    env_file:
+      - env/composer.env
     volumes:
       - ./src:/var/www/html
+      - ./volumes/.composer:${COMPOSER_HOME}
       - ./pwa:/var/www/pwa
 
   db:
