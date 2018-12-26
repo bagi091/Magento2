@@ -23,6 +23,7 @@ services:
       context: ./.docker/php
     environment:
       - COMPOSER_HOME=${COMPOSER_HOME}
+      - MAGENTO_ROOT=${MAGENTO_ROOT}
     env_file:
       - env/composer.env
     volumes:

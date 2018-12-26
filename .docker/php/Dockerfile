@@ -1,4 +1,4 @@
-FROM php:7-fpm
+FROM php:7.2-fpm
 
 RUN apt-get update \
   && apt-get install -y \
@@ -8,6 +8,8 @@ RUN apt-get update \
     libpng-dev \
     libxslt1-dev \
     bzip2 \
+    libzip-dev \
+    unzip \
     libbz2-dev pkg-config libssl-dev \
     cron \
     git \
@@ -42,6 +44,7 @@ RUN docker-php-ext-install \
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer.phar
 
 COPY bin/* /usr/local/bin/
+COPY etc/php.ini /usr/local/etc/php/conf.d/php.ini
 
 RUN chmod +x /usr/local/bin/*
 
