@@ -9,7 +9,6 @@ services:
     volumes:
       - ./.docker/nginx/etc_mount:/etc/nginx
       - ./src:/var/www/html
-      - ./pwa:/var/www/pwa
     restart: always
     links:
       - db
@@ -29,7 +28,6 @@ services:
     volumes:
       - ./src:/var/www/html
       - ./volumes/.composer:${COMPOSER_HOME}
-      - ./pwa:/var/www/pwa
 
   db:
     image: mariadb
